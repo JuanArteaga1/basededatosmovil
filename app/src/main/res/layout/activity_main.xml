@@ -12,7 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:hint="Nombre"
+        android:hint="Nombre Completo"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,24 +30,49 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/nombreEditText" />
 
+    <!-- Campo de texto para la edad -->
+    <EditText
+        android:id="@+id/EdadEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Edad"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/carreraEditText" />
+
     <!-- Botón para agregar estudiante -->
     <Button
         android:id="@+id/agregarButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="Agregar Estudiante"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ListarButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/carreraEditText" />
+        app:layout_constraintTop_toBottomOf="@id/EdadEditText" />
 
-    <!-- RecyclerView para mostrar estudiantes -->
+    <!-- Botón para listar estudiantes -->
+    <Button
+        android:id="@+id/ListarButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Listar Estudiantes"
+        app:layout_constraintStart_toEndOf="@+id/agregarButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/EdadEditText" />
+
+    <!-- RecyclerView para mostrar los estudiantes -->
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/estudiantesRecyclerView"
+        android:id="@+id/recyclerEstudiantes"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:padding="16dp"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@id/ListarButton"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/agregarButton" />
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
